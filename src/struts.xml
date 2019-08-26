@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="utf-8"></constant>
+    
+    <package name="zw.Register" namespace="/" extends="struts-default">
+        <action name="Register" class="zw.Register.RegisterAction" >
+        </action>
+    </package>
+    
+    <package name="zw.Login" namespace="/" extends="struts-default">
+        <action name="Login" class="zw.Login.LoginAction" >
+        </action>
+    </package>
+    
+    <package name="zw.Modify" namespace="/" extends="struts-default">
+        <action name="ModifyUserDataAction" class="zw.Modify.ModifyUserDataAction" >
+        </action>
+    </package>
+    
+    <package name="zw.Article" namespace="/" extends="struts-default">
+        <action name="CommentDAO" class="zw.Article.CommentDAO" >
+        </action>
+        <action name="DeleteReplyAction" class="zw.Article.DeleteReply" >
+        </action>
+        <action name="DeleteArticleDAO" class="zw.Article.DeleteArticleDAO" >
+        </action>
+        <action name="SendArticleDAO" class="zw.Article.SendArticleDAO" >
+        </action>
+        <action name="EditArticleDAO" class="zw.Article.EditArticleDAO"></action>
+    </package>
+    
+    <package name="zw.Admin" namespace="/" extends="struts-default">
+        <action name="AdminLogin" class="zw.Admin.AdminLogin" >
+        </action>
+        <action name="AdminModifyUserData" class="zw.Admin.ModifyUserDataAction" >
+         <result name="success">/admin/usermodify.jsp</result>
+        </action>
+        <action name="AdminDeleteArticleDAO" class="zw.Admin.AdminDeleteArticleDAO" >
+        </action>
+        <action name="AdminDeleteReply" class="zw.Admin.AdminDeleteReply" >
+        </action>
+    </package>
+</struts>
