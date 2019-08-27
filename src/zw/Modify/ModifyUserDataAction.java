@@ -25,10 +25,13 @@ public class ModifyUserDataAction extends ActionSupport
 		HttpSession session = request.getSession();
 		String id = request.getParameter("id");
 		String age = request.getParameter("age");
-		String tel = request.getParameter("tel");	
 		String sex = request.getParameter("sex");
+		String password=request.getParameter("password");
+		String name=request.getParameter("name");
+		String birthday=request.getParameter("birthday");
+		String email=request.getParameter("email");
 		String UPDATE_SQL = "";
-		UPDATE_SQL = "update Registered_User set User_Age = ?,User_PhoneNumber = ?,User_Sex = ?where User_Id = ?";
+		UPDATE_SQL = "update Registered_User set User_Age = ?,User_Password = ?,User_Sex = ?,User_Name = ?,User_Birth = ?,User_Email = ? where User_Id = ?";
 		try
 		{
 			DataLink datalink = new DataLink();
@@ -36,9 +39,12 @@ public class ModifyUserDataAction extends ActionSupport
 			con.setAutoCommit(false);
 			PreparedStatement ps = con.prepareStatement(UPDATE_SQL);
 			ps.setString(1,age);
-			ps.setString(2,tel);
+			ps.setString(2,password);
 			ps.setString(3,sex);
-			ps.setString(4,id);
+			ps.setString(4,name);
+			ps.setString(5,birthday);
+			ps.setString(6,email);
+			ps.setString(7,id);
 
 			ps.executeUpdate();
 			con.commit();

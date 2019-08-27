@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import zw.Datalink.DataLink;
-import zw.Login.MD5Utils;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -85,13 +84,13 @@ public String execute()
 			{
 				ps = con.prepareStatement(INSERT_SQL1);
 				ps.setString(1, id);
-				ps.setString(2,MD5Utils.md5(password));
+				ps.setString(2,password);
 				ps.executeUpdate();
 				con.commit();
 	
 				ps = con.prepareStatement(INSERT_SQL2);
 				ps.setString(1, id);
-				ps.setString(2, MD5Utils.md5(password));
+				ps.setString(2, password);
 				ps.setString(3, sex);
 				ps.setString(4, age);
 				ps.setString(5, name);

@@ -62,10 +62,10 @@
         %>
         <tr class="datagrid1212">
           <td>
-            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_blank" title="查看文章"><%=i %></a>
+            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=i %></a>
           </td>
           <td>
-            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_blank" title="查看文章"><%=msgDetail.getTitle() %></a>
+            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=msgDetail.getTitle() %></a>
           </td>
           <td>
             <%=msgDetail.getSpeaker()%>            
@@ -81,10 +81,10 @@
         %>
         <tr>
           <td>
-            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_blank" title="查看文章"><%=i %></a>
+            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=i %></a>
           </td>
           <td>
-            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_blank" title="查看文章"><%=msgDetail.getTitle() %></a>
+            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=msgDetail.getTitle() %></a>
           </td>
           <td>
            <%=msgDetail.getSpeaker()%>           

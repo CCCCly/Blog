@@ -40,7 +40,7 @@ function isRight(f)
 </script>
 
 <body>
-	<form action="RegisterAction?" method="post" onSubmit="return isRight(this);" enctype="multipart/form-data">
+	<form action="Register" method="post" onSubmit="return isRight(this);" enctype="multipart/form-data">
 		 <table align="center" width="700px" class="datagridstyle" id="DataGrid1" cellSpacing=0 cellPadding=3 border=0>
 	        <tr class="datagridhead">
 				<td colspan="2" align="center"><B>填写个人信息:（带'*'的内容必填）</B></td>

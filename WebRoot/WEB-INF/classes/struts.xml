@@ -26,6 +26,7 @@
         </action>
         <action name="DeleteReplyAction" class="zw.Article.DeleteReply" >
         </action>
+        <action name="LikeArticleDAO" class="zw.Article.LikeArticleDAO"></action>
         <action name="DeleteArticleDAO" class="zw.Article.DeleteArticleDAO" >
         </action>
         <action name="SendArticleDAO" class="zw.Article.SendArticleDAO" >

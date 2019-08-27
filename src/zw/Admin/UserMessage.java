@@ -35,9 +35,7 @@ public class UserMessage
 		    {
 		    	UserData alldata = new UserData();
 		    	alldata.setId(rs.getString("user_id"));
-		    	alldata.setCancel(rs.getInt("Cancellation_Mark"));
 		    	alldata.setSex(rs.getString("user_sex"));
-		    	alldata.setTel(rs.getString("User_PhoneNumber"));
 		    	alldata.setAge(rs.getString("User_Age"));
 		    	userdataItem.add(alldata);
 		    	rs.next();

@@ -49,8 +49,7 @@
      <ul>
      	<li><a href="index.jsp?id=<%=id %>" target="_top" id="CurrentLink"">首页&nbsp;</a></li>
      	<li><a href="articleindex.jsp?id=<%=id %>" target="_top"  id="CurrentLink">文章管理&nbsp;</a></li> 
-        <li><a href="modify_userdata.jsp?id=<%=id %>" target="_top" id="CurrentLink">修改信息&nbsp;</a></li>
-        <li><a href="result.jsp?submit=<%=1%>&&test_score=<%=user.getScore()%>&&time=<%=user.getTest_Time()%>" target="_top" id="CurrentLink">查看结果</a></li>
+        <li><a href="modify_userdata.jsp?id=<%=id %>" target="_top" id="CurrentLink">用户信息&nbsp;</a></li>
     </ul>
   </div>
 </body>

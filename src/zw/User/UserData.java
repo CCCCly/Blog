@@ -10,6 +10,7 @@ public class UserData
 	{
 		return this.id;
 	}
+	
 	private String password;
 	public void setPassword(String password)
 	{
@@ -19,14 +20,15 @@ public class UserData
 	{
 		return this.password;
 	}
-	private String tel;
-	public void setTel(String tel)
+	
+	private String name;
+	public void setName(String name)
 	{
-		this.tel = tel;
+		this.name = name;
 	}
-	public String getTel()
+	public String getName()
 	{
-		return this.tel;
+		return this.name;
 	}
 	private String sex;
 	public void setSex(String sex)
@@ -37,6 +39,7 @@ public class UserData
 	{
 		return this.sex;
 	}
+	
 	private String age;
 	public void setAge(String age)
 	{
@@ -46,31 +49,34 @@ public class UserData
 	{
 		return this.age;
 	}
-	int Cancel;
-	public int getCancel() 
+	
+	public String birthday;
+	public String getBirthday() 
 	{
-		return Cancel;
+		return this.birthday;
 	}
-	public void setCancel(int cancel) 
+	public void setBirthday(String birthday) 
 	{
-		this.Cancel = cancel;
+		this.birthday = birthday;
 	}
-	public int score;
-	public int getScore() 
+	
+	public String email;
+	public String getEmail() 
 	{
-		return score;
+		return this.email;
 	}
-	public void setScore(int score) 
+	public void setEmail(String email) 
 	{
-		this.score = score;
+		this.email = email;
 	}
-	public String test_Time;
-	public String getTest_Time() 
+	
+	public String registertime;
+	public String getRegistertime() 
 	{
-		return test_Time;
+		return this.registertime;
 	}
-	public void setTest_Time(String test_Time) 
+	public void setRegistertime(String registertime) 
 	{
-		this.test_Time = test_Time;
+		this.registertime = registertime;
 	}
 }

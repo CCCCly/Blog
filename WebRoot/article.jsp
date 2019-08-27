@@ -21,6 +21,7 @@
 
   String id = request.getParameter("id");
   String strserial = request.getParameter("serial");
+  String author = request.getParameter("author");
   int serial = Integer.parseInt(strserial);  //获得文章的系列号
   
   ShowArticle showArt = new ShowArticle();
@@ -32,13 +33,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title><%=id%> 的文章</title>
+	<title><%=art.getSpeaker()%> 的文章</title>
 	<link rel="stylesheet" type="text/css" href="css/toolbar.css">
 </head>
 <script language="javascript">
 function isOK(f)
 {
-   else if(f.content.value == "")
+   if(f.content.value == "")
   {
      alert("评论内容不能为空!");
 	 return false;
@@ -80,12 +81,17 @@ function isOK(f)
           <%
           	if(currentuserid.equals(id)&&currentuserid!=null)
           	{
+          		if(id.equals(art.getSpeaker()))
+          		{
           %>
-          
     	    <a href="editarticle.jsp?id=<%=currentuserid%>&&serial=<%=strserial%>" target="_top">编辑</a>&nbsp;&nbsp;
            <a href="DeleteArticleDAO?currentuserid=<%=currentuserid%>&&article_no=<%=strserial%>" onClick="return confirm('是否要删除该文章?');">
              <img src='image/article_delete.gif' border='0' alt='删   除'>删除
            </a>
+	          <%
+	           	}
+	          %>
+          <a href="LikeArticleDAO?id=<%=currentuserid%>&&serial=<%=strserial%>">点赞</a>&nbsp;&nbsp;
           <%
            	}
           %>

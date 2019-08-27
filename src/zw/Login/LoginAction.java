@@ -32,31 +32,25 @@ public class LoginAction extends ActionSupport
 		    Connection conn = datalink.getConnection();
 		    Statement stmt=conn.createStatement(); 
 		    ResultSet RS=null; 
-		    RS = stmt.executeQuery("select * from Registered_User where User_Id = '" + id + "' and User_Password='" +MD5Utils.md5(password)+"'" );
+		    RS = stmt.executeQuery("select * from Registered_User where User_Id = '" + id + "' and User_Password='" +password+"'" );
 		    if(RS.next())
 		    {
-		    	  int i=Integer.parseInt(RS.getString("Cancellation_Mark"));
 		    	  RS.close();
 	    		  stmt.close();
 	    		  conn.close();
-		    	  if(i==0)
+	    		  session.setMaxInactiveInterval(15*60);		      
+		    	  session.setAttribute("currentLoginUserId",id);
+		    	  url = "pass.jsp?id="+id;
+		    	  try 
 		    	  {
-		    		  	session.setMaxInactiveInterval(15*60);		      
-		    		  	session.setAttribute("currentLoginUserId",id);
-		    		  	url = "pass.jsp?id="+id;
-		    		  	try 
-		    		  	{
-							response.sendRedirect(url);
-						} 
-		    		  	catch (IOException e) 
-		    		  	{
-							e.printStackTrace();
-						}
-		    		  	return NONE;
-		    	  }
-		    	  out.print("<script language='javascript'>");
-				  out.print("alert('该用户已注销，如需恢复请联系作者:');history.back();");
-				  out.print("</script>");
+					response.sendRedirect(url);
+				  } 
+		    	  catch (IOException e) 
+		    	  {
+					e.printStackTrace();
+   				  }
+	    		  return NONE;
+		    	  
 			}
 		    else
 		    {

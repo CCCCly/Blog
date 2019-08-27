@@ -30,7 +30,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     <title><%=id %> 的主页</title>
+     <title><%=id %> 信息管理</title>
      <link rel="stylesheet" type="text/css" href="css/toolbar.css">
   </head>
 <script language="javascript">
@@ -73,12 +73,18 @@ function ModifyUserData(f)
   <form action="ModifyUserDataAction?id=<%=currentuserid %>" method="post" name="ModifyBData" onSubmit="return ModifyUserData(this);">
    <table align="center" width="760px" class="datagridstyle" id="DataGrid1" cellSpacing=0 cellPadding=3 border=0>
      <tr class="datagridhead">
-      <td align="center" colspan="2">修改用户信息</td>
+      <td align="center" colspan="2">用户信息</td>
      </tr>
     <tr>
 	  <td>用户ID：</td>
 	  <td>
 	    <%=userdata.getId()%>
+	  </td>
+	</tr>
+	<tr>
+	  <td>密码：</td>
+	  <td>
+	    <input name="password" type="text" value="<%=userdata.getPassword()%>"/>
 	  </td>
 	</tr>
 	<tr class="datagrid1212">
@@ -103,15 +109,33 @@ function ModifyUserData(f)
 	  </td>
 	</tr>
 	<tr class="datagrid1212">
-	 <td>电话:</td>
+	 <td>昵称：</td>
 	 <td>
-	  <input name="tel" type="text" value="<%=userdata.getTel()%>" />
+	  <input name="name" type="text" value="<%=userdata.getName()%>" />
 	 </td>
 	</tr>
 	<tr>
 	  <td>年龄：</td>
 	  <td>
 	    <input name="age" type="text" value="<%=userdata.getAge()%>" />
+	  </td>
+	</tr>
+	<tr class="datagrid1212">
+	 <td>生日：</td>
+	 <td>
+	  <input name="birthday" type="text" value="<%=userdata.getBirthday()%>" />
+	 </td>
+	</tr>
+	<tr>
+	  <td>邮箱：</td>
+	  <td>
+	    <input name="email" type="text" value="<%=userdata.getEmail()%>" />
+	  </td>
+	</tr>
+	<tr>
+	  <td>注册时间：</td>
+	  <td>
+	    <%=userdata.getRegistertime()%>
 	  </td>
 	</tr>
 	<tr>

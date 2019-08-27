@@ -18,11 +18,12 @@ public class GetUserData
 			{
 				userdata.setId(RS.getString("User_Id"));
 			    userdata.setPassword(RS.getString("User_Password"));
-			    userdata.setTel(RS.getString("User_PhoneNumber"));
 			    userdata.setSex(RS.getString("User_Sex"));
 			    userdata.setAge(RS.getString("User_Age"));
-			    userdata.setScore(RS.getInt("Test_Score"));
-			    userdata.setTest_Time(RS.getString("Test_Time"));
+			    userdata.setName(RS.getString("User_Name"));
+			    userdata.setBirthday(RS.getString("User_Birth"));
+			    userdata.setEmail(RS.getString("User_Email"));
+			    userdata.setRegistertime(RS.getString("Register_Time"));
 			}
 			RS.close();
 			stmt.close();
