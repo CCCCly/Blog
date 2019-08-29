@@ -73,9 +73,7 @@
 	</tr>
 	<tr class="datagrid1212">
 	 <td>电话:</td>
-	 <td>
-	  <input type="text" name="tel" value="<%=userdata.getTel()%>" />
-	 </td>
+	 
 	</tr>
 	<tr class="datagrid1212">
 	  <td>年龄：</td>

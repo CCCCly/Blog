@@ -87,31 +87,10 @@
        <a href="adminarticle.jsp?id=<%=userdata.getId() %>" title="<%=userdata.getId() %>的文章" target="_top"><%=userdata.getId() %></a>
       </td>
       <td><%=userdata.getSex()%></td>
-      <td><%=userdata.getTel()%></td>
       <td><%=userdata.getAge()%>
       <td>
         <a href="usermodify.jsp?id=<%=userdata.getId() %>">修改</a>
       </td>
-      <%
-      	 if(userdata.getCancel()==0)
-      	 {
-      %>
-      <td>
-         <a href="ChangeUserStatus?id=<%=userdata.getId()%>&&cancel=<%=1%>" onClick="return isCancel();">注销</a>
-      </td>
-      <%
-      	 } 
-      %>
-       <%
-      	 if(userdata.getCancel()==1)
-      	 {
-      %>
-      <td>
-         <a href="ChangeUserStatus?id=<%=userdata.getId()%>&&cancel=<%=0%>" onClick="return isActive();">激活</a>
-      </td>
-      <%
-      	 } 
-      %>
     </tr>
      <%
         }

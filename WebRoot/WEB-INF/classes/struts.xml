@@ -32,6 +32,7 @@
         <action name="SendArticleDAO" class="zw.Article.SendArticleDAO" >
         </action>
         <action name="EditArticleDAO" class="zw.Article.EditArticleDAO"></action>
+        <action name="DeleteLikeAction" class="zw.Article.DeleteLike"></action>
     </package>
     
     <package name="zw.Admin" namespace="/" extends="struts-default">

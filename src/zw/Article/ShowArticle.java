@@ -8,7 +8,10 @@ import zw.Article.Article;
 public class ShowArticle 
 {
 	private List<Comment> CommentList = new ArrayList<Comment>();
-	private String SELECT_SQLS[] = {"select * from article where article_id = ?","select * from comment where article_id = ?"};
+	private String SELECT_SQLS[] = {"select * from article where article_id = ?",
+			"select * from comment where article_id = ?",
+			"select count(*) from artlike where Article_ID = ?",
+			"select count(*) from artlike where Article_ID = ? and User_ID = ?"};
 	public Article getArticleByNo(int article_no)
 	{
 		Article art = new Article();
@@ -65,5 +68,55 @@ public class ShowArticle
 			return null;
 		}
 		return CommentList;
-	}	
+	}
+	public int getLikeNum(int article_no) {
+		int num = 0;
+		try
+		{
+			DataLink datalink = new DataLink();
+			Connection con = datalink.getConnection();
+			con.setAutoCommit(true);
+			PreparedStatement ps = con.prepareStatement(SELECT_SQLS[2]);
+			ResultSet rs = null;
+			ps.setInt(1,article_no);
+			rs = ps.executeQuery();
+			while(rs.next())
+			{
+		    	num = rs.getInt(1);
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.print(e.getMessage());
+			return num;
+		}
+		return num;
+	}
+	public boolean judgeLike(int article_no,int user_id) {
+		int num = 0;
+		try
+		{
+			DataLink datalink = new DataLink();
+			Connection con = datalink.getConnection();
+			con.setAutoCommit(true);
+			PreparedStatement ps = con.prepareStatement(SELECT_SQLS[3]);
+			ResultSet rs = null;
+			ps.setInt(1, article_no);
+			ps.setInt(2, user_id);
+			rs = ps.executeQuery();
+			while(rs.next())
+			{
+		    	num = rs.getInt(1);
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.print(e.getMessage());
+			return false;
+		}
+		if(num > 0)
+			return true;
+		return false;
+	}
+
 }

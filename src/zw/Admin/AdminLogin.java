@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 import zw.Datalink.DataLink;
-import zw.Login.MD5Utils;
 import com.opensymphony.xwork2.ActionSupport;
 public class AdminLogin extends ActionSupport
 {
@@ -39,7 +38,7 @@ public class AdminLogin extends ActionSupport
 		    Connection conn = datalink.getConnection();
 		    Statement stmt=conn.createStatement(); 
 		    ResultSet RS=null; 
-		    RS = stmt.executeQuery("select * from admin where User_Id = '" + id + "' and User_Password='" + MD5Utils.md5(password) +"'" );
+		    RS = stmt.executeQuery("select * from admin where User_Id = '" + id + "' and User_Password='" + password +"'" );
 		    if(RS.next())
 		    {
 			      RS.close();

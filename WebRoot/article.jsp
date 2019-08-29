@@ -23,11 +23,13 @@
   String strserial = request.getParameter("serial");
   String author = request.getParameter("author");
   int serial = Integer.parseInt(strserial);  //获得文章的系列号
-  
+  int uid = Integer.parseInt(id);
   ShowArticle showArt = new ShowArticle();
   Article art = showArt.getArticleByNo(serial);
   List<Comment> CommentItems = showArt.getCommentByArticle_no(serial);
   Iterator<Comment> commentItems = CommentItems.iterator();
+  int likenum = showArt.getLikeNum(serial);
+  boolean flag = showArt.judgeLike(serial, uid);
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -90,10 +92,19 @@ function isOK(f)
            </a>
 	          <%
 	           	}
+          		if(!flag)
+          		{
 	          %>
-          <a href="LikeArticleDAO?id=<%=currentuserid%>&&serial=<%=strserial%>">点赞</a>&nbsp;&nbsp;
-          <%
-           	}
+		          <a href="LikeArticleDAO?id=<%=currentuserid%>&&serial=<%=strserial%>">点赞<%=likenum%> </a>&nbsp;&nbsp;
+		      <%
+		        }
+          		else
+          		{
+          	  %>
+          		<a href="DeleteLikeAction?id=<%=currentuserid%>&&serial=<%=strserial%>">取消点赞<%=likenum%> </a>&nbsp;&nbsp;
+          	<% 
+          		}
+          	}
           %>
         </td>
       </tr>
@@ -172,6 +183,7 @@ function isOK(f)
 	     </form>
      <%
         }
+  
      %>
    <div id="lastfoot">
      <jsp:include flush="false" page="footer.jsp"></jsp:include>

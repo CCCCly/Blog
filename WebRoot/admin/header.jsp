@@ -30,12 +30,6 @@
        <li>
          <a href="adminarticle.jsp" target="_top" id="CurrentLink">文章管理&nbsp;&nbsp;</a>
 	   </li>
-	   <li>
-         <a href="adminquestion.jsp" target="_top" id="CurrentLink">题目管理&nbsp;&nbsp;</a>
-	   </li>
-	   <li>
-         <a href="adminresult.jsp" target="_top" id="CurrentLink">结果管理</a> 
-	   </li>
     </ul>
   </div>
   </body>
