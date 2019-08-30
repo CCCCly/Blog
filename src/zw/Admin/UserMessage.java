@@ -34,9 +34,13 @@ public class UserMessage
 		    while(i<intpagesize&&!rs.isAfterLast())
 		    {
 		    	UserData alldata = new UserData();
-		    	alldata.setId(rs.getString("user_id"));
-		    	alldata.setSex(rs.getString("user_sex"));
+		    	alldata.setId(rs.getString("User_Id"));
+		    	alldata.setSex(rs.getString("User_Sex"));
 		    	alldata.setAge(rs.getString("User_Age"));
+		    	alldata.setName(rs.getString("User_Name"));
+		    	alldata.setBirthday(rs.getString("User_Birth"));
+		    	alldata.setEmail(rs.getString("User_Email"));
+		    	alldata.setRegistertime(rs.getString("Register_Time"));
 		    	userdataItem.add(alldata);
 		    	rs.next();
 		    	i++;

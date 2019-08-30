@@ -105,6 +105,10 @@
           <td>
             <%=art.getSent_time() %>
           </td>
+          <td>
+		        <a href="AdminDeleteArticleDAO?currentid=<%=id%>&&article_no=<%=art.getArticle_no()%>" onClick="return confirm('是否要删除该文章?');">
+	        		   删除</a>
+   		  </td>
         </tr>
         <%
          }

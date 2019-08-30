@@ -70,10 +70,11 @@
      <tr class="datagridhead">
       <td>ID</td>
       <td>性别</td>
-      <td>电话</td>
+      <td>昵称</td>
       <td>年龄</td>
-      <td>修改个人信息</td>
-      <td>注销/激活</td>
+      <td>生日</td>
+      <td>邮箱</td>
+      <td>注册时间</td>
      </tr>
      <%
        int i = 0;
@@ -87,7 +88,11 @@
        <a href="adminarticle.jsp?id=<%=userdata.getId() %>" title="<%=userdata.getId() %>的文章" target="_top"><%=userdata.getId() %></a>
       </td>
       <td><%=userdata.getSex()%></td>
-      <td><%=userdata.getAge()%>
+      <td><%=userdata.getName()%></td>
+      <td><%=userdata.getAge()%></td>
+      <td><%=userdata.getBirthday()%></td>
+      <td><%=userdata.getEmail()%></td>
+      <td><%=userdata.getRegistertime()%></td>
       <td>
         <a href="usermodify.jsp?id=<%=userdata.getId() %>">修改</a>
       </td>

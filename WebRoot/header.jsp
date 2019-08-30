@@ -32,7 +32,7 @@
          		if(!id.equals("")&&currentuserid.equals(id))
          		{
          	%>
-       				<ul><li><p align="right">欢迎你 <%=id%><a href="logout.jsp">&nbsp;退出&nbsp;</a><a href="cancel.jsp?id=<%=id%>">注销</a></p></li></ul>
+       				<ul><li><p align="right">欢迎你 <%=id%><a href="logout.jsp">&nbsp;退出&nbsp;</a></p></li></ul>
        		<%
          		}
          		else 

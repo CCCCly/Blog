@@ -38,7 +38,7 @@
    </tr>
   </table>
   
-  <form action="AdminModifyUserData?id=<%=id%>" method="post" name="ModifyBData" onSubmit="return ModifyUserData(this);">
+  <form action="AdminModifyUserData?id=<%=id%>&&adminid=<%=adminid %>" method="post" name="ModifyBData" onSubmit="return ModifyUserData(this);">
    <table align="center" width="760px" class="datagridstyle" id="DataGrid1" cellSpacing=0 cellPadding=3 border=0>
      <tr class="datagridhead">
       <td align="center" colspan="2">修改用户信息</td>
@@ -48,6 +48,12 @@
 	  <td>用户ID：</td>
 	  <td>
 	    <%=userdata.getId()%>
+	  </td>
+	</tr>
+	<tr>
+	  <td>密码：</td>
+	  <td>
+	    <input name="password" type="text" value="<%=userdata.getPassword()%>"/>
 	  </td>
 	</tr>
 	<tr class="datagrid1212">
@@ -72,13 +78,33 @@
 	  </td>
 	</tr>
 	<tr class="datagrid1212">
-	 <td>电话:</td>
-	 
+	 <td>昵称：</td>
+	 <td>
+	  <input name="name" type="text" value="<%=userdata.getName()%>" />
+	 </td>
 	</tr>
-	<tr class="datagrid1212">
+	<tr>
 	  <td>年龄：</td>
 	  <td>
 	    <input name="age" type="text" value="<%=userdata.getAge()%>" />
+	  </td>
+	</tr>
+	<tr class="datagrid1212">
+	 <td>生日：</td>
+	 <td>
+	  <input name="birthday" type="text" value="<%=userdata.getBirthday()%>" />
+	 </td>
+	</tr>
+	<tr>
+	  <td>邮箱：</td>
+	  <td>
+	    <input name="email" type="text" value="<%=userdata.getEmail()%>" />
+	  </td>
+	</tr>
+	<tr>
+	  <td>注册时间：</td>
+	  <td>
+	    <%=userdata.getRegistertime()%>
 	  </td>
 	</tr>
 	<tr class="datagrid1212">
