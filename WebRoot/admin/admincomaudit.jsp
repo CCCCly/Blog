@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*,java.util.*" errorPage=""%>
 <%@ page import="zw.User.UserData" %>
-<%@ page import="zw.Article.Article" %>
-<%@ page import="zw.Article.getArticle" %>
+<%@ page import="zw.Article.Comment" %>
+<%@ page import="zw.Article.getComment" %>
 <%@ page import="zw.Admin.UserMessage" %>
 <%
   String adminid = (String)session.getAttribute("currentLoginAdminId");
@@ -15,13 +15,13 @@
   }
   intpage = java.lang.Integer.parseInt(strpage);
   
-  getArticle getArt = new getArticle();
-  List<Article> items = getArt.getArticleMessage(id);
-  Iterator<Article> artItems = items.iterator();
-  intpagecount = getArt.getPageSize(id);
-  UserMessage usermessage = new UserMessage();
-  List<UserData> userItems = usermessage.getAllUserMessage(intpage);
-  Iterator<UserData> userIter = userItems.iterator();
+  getComment getCom = new getComment();
+  List<Comment> items = getCom.getAuditMessage();
+  Iterator<Comment> CommentItems = items.iterator();
+  intpagecount = getCom.getAuditPageSize();
+  
+
+  
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -47,67 +47,36 @@
     </table>
          
 <hr/>
-<script language="javascript">
-  function loadUserArticle()
-  {
-     var user=document.getElementById("selectuser");
-     var uservalue=user.value;
-     var url="adminarticle.jsp?id=";
-     url+=uservalue;
-     window.location=url;
-  }
-</script>
-<p>用户 
-<select name="selectid" id="selectuser" onchange="loadUserArticle();">
- <%
-  if(id!=null)
-  {
-    out.print("<option value="+id+">"+id+"</option>");
-  } 
-  else
-  {
-     out.print("<option>请选择用户ID</option>");
-  }
-  while(userIter.hasNext())
-  {        
-      UserData userdata = (UserData)userIter.next();
-      if(!userdata.getId().equals(id))
-      {
-        out.print("<option value="+userdata.getId()+">"+userdata.getId()+"</option>");
-      } 
-  }
-  %>
-</select>
-的文章:</p>    
+
 <table align="center" width="960px" class="datagridstyle" id="DataGrid1" cellSpacing=0 cellPadding=3 border=0>
   <tr class="datagridhead">
-   <td>文章数</td>
-   <td>主题</td>
+   <td>评论数</td>
+   <td>内容</td>
    <td>发表者</td>
    <td>发表时间</td>
  </tr> 
   		<%
          int lili = 0;
-         for(int i=1;artItems.hasNext();i++)
+         for(int i=1;CommentItems.hasNext();i++)
          {
-           Article art = (Article)artItems.next();
+           Comment cmt = (Comment)CommentItems.next();
         %>
         <tr class="datagrid1212">
           <td>
             <%=i %>
           </td>
           <td>
-            <a href="adminarticle_action.jsp?id=<%=id %>&&serial=<%=art.getArticle_no() %>"><%=art.getTitle() %></a>
+            <%=cmt.getContent() %>
           </td>
           <td>
-               <%=art.getSpeaker() %>
+               <%=cmt.getUser_id() %>
           </td>
           <td>
-            <%=art.getSent_time() %>
+            <%=cmt.getInsert_time() %>
           </td>
           <td>
-		        <a href="AdminDeleteArticleDAO?currentid=<%=id%>&&article_no=<%=art.getArticle_no()%>" onClick="return confirm('是否要删除该文章?');">
-	        		   删除</a>
+		        <a href="AuditComDAO?currentid=<%=id%>&&comment_no=<%=cmt.getId()%>" onClick="return confirm('是否要通过该评论?');">
+	        		   通过</a>
    		  </td>
         </tr>
         <%

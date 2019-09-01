@@ -6,8 +6,8 @@ import zw.Datalink.DataLink;
 public class MessageShow 
 {
 	private List<Article> messageList = new ArrayList<Article>();
-	private String SELECT_SQL = "select * from Article";
-	private String SELECT_SQL1 = "SELECT * FROM Article ORDER BY Article_Id DESC";
+	private String SELECT_SQL = "select * from Article where Audit = '1'" ;
+	private String SELECT_SQL1 = "SELECT * FROM Article where Audit = '1' ORDER BY Article_Id DESC";
 	private int pagesize = 9;
 	public List<Article> getMessage(int page)
 	{

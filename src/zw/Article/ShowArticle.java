@@ -9,7 +9,7 @@ public class ShowArticle
 {
 	private List<Comment> CommentList = new ArrayList<Comment>();
 	private String SELECT_SQLS[] = {"select * from article where article_id = ?",
-			"select * from comment where article_id = ?",
+			"select * from comment where article_id = ? and audit = '1'",
 			"select count(*) from artlike where Article_ID = ?",
 			"select count(*) from artlike where Article_ID = ? and User_ID = ?",
 			"select count(*) from collection where Article_Id = ? and User_Id = ?"};

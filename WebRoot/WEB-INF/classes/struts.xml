@@ -47,5 +47,7 @@
         </action>
         <action name="AdminDeleteReply" class="zw.Admin.AdminDeleteReply" >
         </action>
+        <action name="AuditArtDAO" class="zw.Admin.AuditArtDAO"></action>
+        <action name="AuditComDAO" class="zw.Admin.AuditComDAO"></action>
     </package>
 </struts>

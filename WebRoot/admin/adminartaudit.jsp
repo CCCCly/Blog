@@ -16,12 +16,10 @@
   intpage = java.lang.Integer.parseInt(strpage);
   
   getArticle getArt = new getArticle();
-  List<Article> items = getArt.getArticleMessage(id);
+  List<Article> items = getArt.getAuditMessage();
   Iterator<Article> artItems = items.iterator();
-  intpagecount = getArt.getPageSize(id);
-  UserMessage usermessage = new UserMessage();
-  List<UserData> userItems = usermessage.getAllUserMessage(intpage);
-  Iterator<UserData> userIter = userItems.iterator();
+  intpagecount = getArt.getAuditPageSize();
+  
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -47,38 +45,7 @@
     </table>
          
 <hr/>
-<script language="javascript">
-  function loadUserArticle()
-  {
-     var user=document.getElementById("selectuser");
-     var uservalue=user.value;
-     var url="adminarticle.jsp?id=";
-     url+=uservalue;
-     window.location=url;
-  }
-</script>
-<p>用户 
-<select name="selectid" id="selectuser" onchange="loadUserArticle();">
- <%
-  if(id!=null)
-  {
-    out.print("<option value="+id+">"+id+"</option>");
-  } 
-  else
-  {
-     out.print("<option>请选择用户ID</option>");
-  }
-  while(userIter.hasNext())
-  {        
-      UserData userdata = (UserData)userIter.next();
-      if(!userdata.getId().equals(id))
-      {
-        out.print("<option value="+userdata.getId()+">"+userdata.getId()+"</option>");
-      } 
-  }
-  %>
-</select>
-的文章:</p>    
+
 <table align="center" width="960px" class="datagridstyle" id="DataGrid1" cellSpacing=0 cellPadding=3 border=0>
   <tr class="datagridhead">
    <td>文章数</td>
@@ -106,8 +73,8 @@
             <%=art.getSent_time() %>
           </td>
           <td>
-		        <a href="AdminDeleteArticleDAO?currentid=<%=id%>&&article_no=<%=art.getArticle_no()%>" onClick="return confirm('是否要删除该文章?');">
-	        		   删除</a>
+		        <a href="AuditArtDAO?currentid=<%=id%>&&article_no=<%=art.getArticle_no()%>" onClick="return confirm('是否要通过该文章?');">
+	        		   通过</a>
    		  </td>
         </tr>
         <%

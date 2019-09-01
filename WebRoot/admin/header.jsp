@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="headImage">
-        <img src="../image/IMG_0393.jpg" width="960px" height="130px" alt="性格测试网站后台管理平台">
+        <img src="../image/top.jpg" width="960px" height="130px" alt="性格测试网站后台管理平台">
     </div>
     <div id="Head">
       <div id="HeadTop"> 
@@ -22,13 +22,19 @@
    <div id="ChannelMenu">
      <ul>
        <li>
-         <a href="../index.jsp" target="_blank">首页&nbsp;&nbsp;</a>
+         <a href="adminindex.jsp" target="_top" id="CurrentLink">首页&nbsp;&nbsp;</a>
        </li>
        <li>
          <a href="adminuser.jsp" target="_top"  id="CurrentLink">用户管理&nbsp;&nbsp;</a>
        </li>      
        <li>
          <a href="adminarticle.jsp" target="_top" id="CurrentLink">文章管理&nbsp;&nbsp;</a>
+	   </li>
+	   <li>
+         <a href="adminartaudit.jsp" target="_top" id="CurrentLink">审核文章&nbsp;&nbsp;</a>
+	   </li>
+	   <li>
+         <a href="admincomaudit.jsp" target="_top" id="CurrentLink">审核评论&nbsp;&nbsp;</a>
 	   </li>
     </ul>
   </div>
