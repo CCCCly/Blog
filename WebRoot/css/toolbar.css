@@ -205,11 +205,11 @@ a:active {
 	TEXT-DECORATION: none
 }
 #Head A.current:hover {
-	COLOR: #f30; 
+	COLOR: #c0c0c0; 
 	TEXT-DECORATION: underline
 }
 #Head A.current:active {
-	COLOR: #f30; 
+	COLOR: #c0c0c0; 
 	TEXT-DECORATION: underline
 }
 #Head UL {
@@ -290,10 +290,10 @@ color:#000000
 	COLOR: Black;
 }
 #ChannelMenu A:hover {
-	COLOR: #f50
+	COLOR: #c0c0c0
 }
 #ChannelMenu A:active {
-	COLOR: #f50
+	COLOR: #c0c0c0
 }
 #ChannelMenu ul #CurrentLink{
 	font-style: inherit;
