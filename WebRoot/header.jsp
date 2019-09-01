@@ -50,6 +50,7 @@
      	<li><a href="index.jsp?id=<%=id %>" target="_top" id="CurrentLink"">首页&nbsp;</a></li>
      	<li><a href="articleindex.jsp?id=<%=id %>" target="_top"  id="CurrentLink">文章管理&nbsp;</a></li> 
         <li><a href="modify_userdata.jsp?id=<%=id %>" target="_top" id="CurrentLink">用户信息&nbsp;</a></li>
+        <li><a href="collectionindex.jsp?id=<%=id %>" target="_top" id="CurrentLink">收藏管理&nbsp;</a></li>
     </ul>
   </div>
 </body>

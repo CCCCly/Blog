@@ -29,7 +29,8 @@
   List<Comment> CommentItems = showArt.getCommentByArticle_no(serial);
   Iterator<Comment> commentItems = CommentItems.iterator();
   int likenum = showArt.getLikeNum(serial);
-  boolean flag = showArt.judgeLike(serial, uid);
+  boolean likeflag = showArt.judgeLike(serial, uid);
+  boolean collectionflag = showArt.judgeCollection(serial, uid);
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -92,7 +93,7 @@ function isOK(f)
            </a>
 	          <%
 	           	}
-          		if(!flag)
+          		if(!likeflag)
           		{
 	          %>
 		          <a href="LikeArticleDAO?id=<%=currentuserid%>&&serial=<%=strserial%>">点赞<%=likenum%> </a>&nbsp;&nbsp;
@@ -102,6 +103,18 @@ function isOK(f)
           		{
           	  %>
           		<a href="DeleteLikeAction?id=<%=currentuserid%>&&serial=<%=strserial%>">取消点赞<%=likenum%> </a>&nbsp;&nbsp;
+          	  <% 
+          		}
+          		if(!collectionflag)
+          		{
+	          %>
+		          <a href="CollectionDAO?id=<%=currentuserid%>&&serial=<%=strserial%>">收藏</a>&nbsp;&nbsp;
+		      <%
+		        }
+          		else
+          		{
+          	  %>
+          		<a href="DeleteCollectionAction?id=<%=currentuserid%>&&serial=<%=strserial%>">取消收藏</a>&nbsp;&nbsp;
           	<% 
           		}
           	}

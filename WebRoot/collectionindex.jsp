@@ -20,14 +20,14 @@
   }
   String id = request.getParameter("id");
   getArticle getArt = new getArticle();
-  List<Article> items = getArt.getArticleMessage(id);
+  List<Article> items = getArt.getCollectionMessage(id);
   Iterator<Article> artItems = items.iterator();
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">	 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><%=id %> 的文章</title>
+<title><%=id %> 的收藏</title>
 <link rel="stylesheet" type="text/css" href="css/toolbar.css">
 </head>
 
@@ -53,7 +53,7 @@
 <hr/> 
 	<table align="center" width="960px" class="datagridstyle" id="DataGrid1" cellSpacing=0 cellPadding=3 border=0>
 	  <tr class="datagridhead">
-	   <td>文章数</td><td>主题</td><td>发表者</td><td>发表时间</td>
+	   <td>收藏数</td><td>主题</td><td>发表者</td><td>发表时间</td>
 	  </tr> 
 	  <%
 	  	for(int i=1;artItems.hasNext();i++)

@@ -111,7 +111,7 @@
 }
 #photolist#message{
 height:20px;
-background:#81DA67;
+background:#84b9fb;
 }
 #photolist#message p{
 font-weight:bold;
@@ -131,7 +131,7 @@ letter-spacing: 8px;
 }
 
 .datagridhead12 {
-	BACKGROUND-COLOR: #C5FCC9;
+	BACKGROUND-COLOR: #80ffff;
 	height:10px;
 	overflow:hidden;
 }
