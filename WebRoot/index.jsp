@@ -26,7 +26,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>BLOG index by CLY</title>
+    <title>index</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -62,30 +62,56 @@
         %>
         <tr class="datagrid1212">
           <td>
-            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=i %></a>
+            <%=i %>
           </td>
-          <td>
-            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=msgDetail.getTitle() %></a>
-          </td>
-          <td>
-            <%=msgDetail.getSpeaker()%>            
-          </td>
-          <td>
-            <%=msgDetail.getSent_time()%>
-          </td>
-        </tr>
-        <%
-           }
+	        <%
+	         if(id!=null) 
+	          {
+	        %>
+	          <td>
+	            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=msgDetail.getTitle() %></a>
+	          </td>
+	        <%}
+	         else
+	         { %>
+	          <td>
+	          	<%=msgDetail.getTitle() %>
+	          <%
+	         } 
+	         %>
+	          </td>
+	          <td>
+	            <%=msgDetail.getSpeaker()%>            
+	          </td>
+	          <td>
+	            <%=msgDetail.getSent_time()%>
+	          </td>
+	        </tr>
+	        <%
+	       }
            else
            { 
         %>
         <tr>
           <td>
-            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=i %></a>
+            <%=i %>
           </td>
-          <td>
-            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=msgDetail.getTitle() %></a>
-          </td>
+          <%
+	         if(id!=null) 
+	          {
+	        %>
+	          <td>
+	            <a href="article.jsp?serial=<%=msgDetail.getArticle_no()%>&&id=<%=id %>" target="_top" title="查看文章"><%=msgDetail.getTitle() %></a>
+	          </td>
+	        <%}
+	         else
+	         { %>
+	          <td>
+	          	<%=msgDetail.getTitle() %>
+	          <%
+	         } 
+	         %>
+	          </td>
           <td>
            <%=msgDetail.getSpeaker()%>           
           </td>
