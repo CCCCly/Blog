@@ -6,48 +6,48 @@
 <struts>
     <constant name="struts.i18n.encoding" value="utf-8"></constant>
     
-    <package name="zw.Register" namespace="/" extends="struts-default">
-        <action name="Register" class="zw.Register.RegisterAction" >
+    <package name="cly.Register" namespace="/" extends="struts-default">
+        <action name="Register" class="cly.Register.RegisterAction" >
         </action>
     </package>
     
-    <package name="zw.Login" namespace="/" extends="struts-default">
-        <action name="Login" class="zw.Login.LoginAction" >
+    <package name="cly.Login" namespace="/" extends="struts-default">
+        <action name="Login" class="cly.Login.LoginAction" >
         </action>
     </package>
     
-    <package name="zw.Modify" namespace="/" extends="struts-default">
-        <action name="ModifyUserDataAction" class="zw.Modify.ModifyUserDataAction" >
+    <package name="cly.Modify" namespace="/" extends="struts-default">
+        <action name="ModifyUserDataAction" class="cly.Modify.ModifyUserDataAction" >
         </action>
     </package>
     
-    <package name="zw.Article" namespace="/" extends="struts-default">
-        <action name="CollectionDAO" class="zw.Article.CollectionDAO"></action>
-        <action name="DeleteCollectionAction" class="zw.Article.DeleteCollection"></action>
-        <action name="CommentDAO" class="zw.Article.CommentDAO" >
+    <package name="cly.Article" namespace="/" extends="struts-default">
+        <action name="CollectionDAO" class="cly.Article.CollectionDAO"></action>
+        <action name="DeleteCollectionAction" class="cly.Article.DeleteCollection"></action>
+        <action name="CommentDAO" class="cly.Article.CommentDAO" >
         </action>
-        <action name="DeleteReplyAction" class="zw.Article.DeleteReply" >
+        <action name="DeleteReplyAction" class="cly.Article.DeleteReply" >
         </action>
-        <action name="LikeArticleDAO" class="zw.Article.LikeArticleDAO"></action>
-        <action name="DeleteArticleDAO" class="zw.Article.DeleteArticleDAO" >
+        <action name="LikeArticleDAO" class="cly.Article.LikeArticleDAO"></action>
+        <action name="DeleteArticleDAO" class="cly.Article.DeleteArticleDAO" >
         </action>
-        <action name="SendArticleDAO" class="zw.Article.SendArticleDAO" >
+        <action name="SendArticleDAO" class="cly.Article.SendArticleDAO" >
         </action>
-        <action name="EditArticleDAO" class="zw.Article.EditArticleDAO"></action>
-        <action name="DeleteLikeAction" class="zw.Article.DeleteLike"></action>
+        <action name="EditArticleDAO" class="cly.Article.EditArticleDAO"></action>
+        <action name="DeleteLikeAction" class="cly.Article.DeleteLike"></action>
     </package>
     
-    <package name="zw.Admin" namespace="/" extends="struts-default">
-        <action name="AdminLogin" class="zw.Admin.AdminLogin" >
+    <package name="cly.Admin" namespace="/" extends="struts-default">
+        <action name="AdminLogin" class="cly.Admin.AdminLogin" >
         </action>
-        <action name="AdminModifyUserData" class="zw.Admin.ModifyUserDataAction" >
+        <action name="AdminModifyUserData" class="cly.Admin.ModifyUserDataAction" >
          <result name="success">/admin/usermodify.jsp</result>
         </action>
-        <action name="AdminDeleteArticleDAO" class="zw.Admin.AdminDeleteArticleDAO" >
+        <action name="AdminDeleteArticleDAO" class="cly.Admin.AdminDeleteArticleDAO" >
         </action>
-        <action name="AdminDeleteReply" class="zw.Admin.AdminDeleteReply" >
+        <action name="AdminDeleteReply" class="cly.Admin.AdminDeleteReply" >
         </action>
-        <action name="AuditArtDAO" class="zw.Admin.AuditArtDAO"></action>
-        <action name="AuditComDAO" class="zw.Admin.AuditComDAO"></action>
+        <action name="AuditArtDAO" class="cly.Admin.AuditArtDAO"></action>
+        <action name="AuditComDAO" class="cly.Admin.AuditComDAO"></action>
     </package>
 </struts>

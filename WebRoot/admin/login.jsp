@@ -26,19 +26,19 @@ var monthname=new Array("January","February","March","April","May","June","July"
 var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
 </script>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr bgcolor="#D5EDB3">
+  <tr bgcolor="#ffffff">
     <td width="382" colspan="2" rowspan="2"><img src="../image/top2.jpg" alt="Header image" width="382" height="101" border="0" /></td>
     <td width="378" height="50" id="logo" valign="bottom" align="center" nowrap="nowrap">管理员登录</td>
     <td width="100%">&nbsp;</td>
   </tr>
-  <tr bgcolor="#D5EDB3">
+  <tr bgcolor="#ffffff">
     <td height="51" id="tagline" valign="top" align="center"></td>
 	<td width="100%">&nbsp;</td>
   </tr>
   <tr>
     <td colspan="4" bgcolor="#5C743D"><img src="../image/mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
   </tr>
-  <tr bgcolor="#99CC66">
+  <tr bgcolor="#ffffff">
   <td>&nbsp;</td>
   	<td colspan="3" id="dateformat" height="20">
 	  	<a href="../index.jsp">主页</a>&nbsp;&nbsp;&nbsp;&nbsp;

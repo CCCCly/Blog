@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*,java.util.*" errorPage=""%> 
-<%@ page import="zw.Article.MessageShow" %>
-<%@ page import="zw.Article.Article" %>
-<%@ page import="zw.Article.getArticle" %>
-<%@ page import="zw.User.*" %>
+<%@ page import="cly.Article.MessageShow" %>
+<%@ page import="cly.Article.Article" %>
+<%@ page import="cly.Article.getArticle" %>
+<%@ page import="cly.User.*" %>
 <%  
   String id = request.getParameter("id");
   if(id!=null)

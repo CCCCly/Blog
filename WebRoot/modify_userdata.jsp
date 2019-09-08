@@ -1,8 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ page import="zw.User.GetUserData" %>
-<%@ page import="zw.User.UserData" %>
-<%@ page import="zw.Login.MD5Utils" %>
+<%@ page import="cly.User.GetUserData" %>
+<%@ page import="cly.User.UserData" %>
 <%
   String currentuserid = "";
   if((String)session.getAttribute("currentLoginUserId")!=null)
@@ -14,7 +13,6 @@
   
   GetUserData getuserdata = new GetUserData();
   UserData userdata = getuserdata.getCurrentUserData(id);
-  MD5Utils md5Utils=new MD5Utils();
  
   String modifymsg = (String)session.getAttribute("modifymsg");
   if(modifymsg == null)

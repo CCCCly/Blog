@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*,java.util.*" errorPage=""%> 
-<%@ page import="zw.Admin.UserMessage" %>
-<%@ page import="zw.User.UserData" %>
+<%@ page import="cly.Admin.UserMessage" %>
+<%@ page import="cly.User.UserData" %>
 <%
   String adminid = (String)session.getAttribute("currentLoginAdminId");
   String strpage = request.getParameter("page");

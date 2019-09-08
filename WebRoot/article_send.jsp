@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*,java.util.*" errorPage=""%> 
-<%@ page import="zw.User.UserData" %>
-<%@ page import="zw.Article.Article" %>
-<%@ page import="zw.Article.Comment" %>
-<%@ page import="zw.Article.ShowArticle" %>
+<%@ page import="cly.User.UserData" %>
+<%@ page import="cly.Article.Article" %>
+<%@ page import="cly.Article.Comment" %>
+<%@ page import="cly.Article.ShowArticle" %>
 <%
   String currentuserid = null;
   if((String)session.getAttribute("currentLoginUserId")!=null)

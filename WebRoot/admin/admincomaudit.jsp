@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*,java.util.*" errorPage=""%>
-<%@ page import="zw.User.UserData" %>
-<%@ page import="zw.Article.Comment" %>
-<%@ page import="zw.Article.getComment" %>
-<%@ page import="zw.Admin.UserMessage" %>
+<%@ page import="cly.User.UserData" %>
+<%@ page import="cly.Article.Comment" %>
+<%@ page import="cly.Article.getComment" %>
+<%@ page import="cly.Admin.UserMessage" %>
 <%
   String adminid = (String)session.getAttribute("currentLoginAdminId");
   String strpage = request.getParameter("page");

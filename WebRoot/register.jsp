@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*,java.util.*" errorPage=""%> 
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ page import="zw.Register.RegisterAction" %>
+<%@ page import="cly.Register.RegisterAction" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>

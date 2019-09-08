@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*,java.util.*" errorPage=""%>
-<%@ page import="zw.User.*" %>
+<%@ page import="cly.User.*" %>
 
 <%
   session.setAttribute("score",0);

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
-<%@ page import="zw.User.GetUserData" %>
-<%@ page import="zw.User.UserData" %>
+<%@ page import="cly.User.GetUserData" %>
+<%@ page import="cly.User.UserData" %>
 <%
    String modifymsg = (String)session.getAttribute("modifymsg");
    if(modifymsg == null)
